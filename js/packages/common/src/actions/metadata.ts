@@ -83,6 +83,11 @@ export interface IMetadataExtension {
   external_url: string;
 
   seller_fee_basis_points: number;
+  
+  collection: {
+    name: string;
+    family: string;
+  };
 
   properties: {
     files?: FileOrString[];

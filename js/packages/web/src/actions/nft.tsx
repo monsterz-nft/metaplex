@@ -84,10 +84,6 @@ export const mintNFT = async (
     animation_url: string | undefined;
     attributes: Attribute[] | undefined;
     external_url: string;
-    collection: {
-      name: string;
-      family: string;
-    };
     properties: any;
     creators: Creator[] | null;
     sellerFeeBasisPoints: number;
@@ -108,10 +104,6 @@ export const mintNFT = async (
     animation_url: metadata.animation_url,
     attributes: metadata.attributes,
     external_url: metadata.external_url,
-    collection: {
-      name: metadata.collection.name,
-      family: metadata.collection.family,
-    },
     properties: {
       ...metadata.properties,
       creators: metadata.creators?.map(creator => {

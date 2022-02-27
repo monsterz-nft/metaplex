@@ -79,10 +79,6 @@ export const ArtCreateView = () => {
     attributes: undefined,
     seller_fee_basis_points: 0,
     creators: [],
-    collection: {
-      name:'',
-      family:'',
-    },
     properties: {
       files: [],
       category: MetadataCategory.Image,
@@ -114,10 +110,6 @@ export const ArtCreateView = () => {
       animation_url: attributes.animation_url,
       attributes: attributes.attributes,
       external_url: attributes.external_url,
-      collection: {
-        name: attributes.collection.name,
-        family: attributes.collection.family,
-      },
       properties: {
         files: attributes.properties.files,
         category: attributes.properties?.category,
@@ -672,57 +664,21 @@ const InfoStep = (props: {
               }
             />
           </label>
-          <label className="action-field">
-            <span className="field-title">Collection name</span>
+          {/* <label className="action-field">
+            <span className="field-title">Symbol</span>
             <Input
               className="input"
-              placeholder="Max 100 characters"
+              placeholder="Max 10 characters"
               allowClear
-              value={props.attributes.collection.name}
+              value={props.attributes.symbol}
               onChange={info =>
                 props.setAttributes({
                   ...props.attributes,
-                  collection: {
-                    ...props.attributes.collection,
-                    name: info.target.value,
-                  },
+                  symbol: info.target.value,
                 })
               }
             />
-          </label>
-          <label className="action-field">
-            <span className="field-title">Collection family</span>
-            <Input
-              className="input"
-              placeholder="Max 100 characters"
-              allowClear
-              value={props.attributes.collection.family}
-              onChange={info =>
-                props.setAttributes({
-                  ...props.attributes,
-                  collection: {
-                    ...props.attributes.collection,
-                    family: info.target.value,
-                  },
-                })
-              }
-            />
-          </label>
-          <label className="action-field">
-            <span className="field-title">External URL</span>
-            <Input
-              className="input"
-              placeholder="Max 100 characters"
-              allowClear
-              value={props.attributes.external_url}
-              onChange={info =>
-                props.setAttributes({
-                  ...props.attributes,
-                  external_url: info.target.value,
-                })
-              }
-            />
-          </label>
+          </label> */}
 
           <label className="action-field">
             <span className="field-title">Description</span>
@@ -893,6 +849,13 @@ const RoyaltiesSplitter = (props: {
                 <Col span={4} style={{ paddingLeft: 12 }}>
                   <Slider value={amt} onChange={handleChangeShare} />
                 </Col>
+                {props.isShowErrors && amt === 0 && (
+                  <Col style={{ paddingLeft: 12 }}>
+                    <Text type="danger">
+                      The split percentage for this creator cannot be 0%.
+                    </Text>
+                  </Col>
+                )}
               </Row>
             </Col>
           );
@@ -1046,8 +1009,13 @@ const RoyaltiesStep = (props: {
           type="primary"
           size="large"
           onClick={() => {
-            if (totalRoyaltyShares !== 100) {
-              // if total shares does not equal 100, show errors.
+            // Find all royalties that are invalid (0)
+            const zeroedRoyalties = royalties.filter(
+              royalty => royalty.amount === 0,
+            );
+
+            if (zeroedRoyalties.length !== 0 || totalRoyaltyShares !== 100) {
+              // Contains a share that is 0 or total shares does not equal 100, show errors.
               setIsShowErrors(true);
               return;
             }

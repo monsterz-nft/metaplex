@@ -5,7 +5,6 @@ import {
   SYSVAR_CLOCK_PUBKEY,
 } from '@solana/web3.js';
 import { serialize } from 'borsh';
-
 import { getWhitelistedCreator } from '../../metaplex';
 import { programIds, toPublicKey, StringPublicKey } from '../../../utils';
 import { InitPackSetParams } from '../interface';

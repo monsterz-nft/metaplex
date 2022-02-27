@@ -14,18 +14,19 @@ import {
   StaticPageView,
 } from './views';
 import { AdminView } from './views/admin';
-import { PackView } from './views/pack';
+import PackView from './views/pack';
 import { PackCreateView } from './views/packCreate';
 import { BillingView } from './views/auction/billing';
+import { CollectionsView } from './views/collections';
+import { CollectionDetailView } from './views/collections/collectionDetail';
 
 export function Routes() {
-  const shouldEnableNftPacks = process.env.NEXT_ENABLE_NFT_PACKS;
+  const shouldEnableNftPacks = process.env.NEXT_ENABLE_NFT_PACKS === 'true';
   return (
     <>
       <HashRouter basename={'/'}>
         <Providers>
           <Switch>
-            <Route exact path="/admin" component={() => <AdminView />} />
             {shouldEnableNftPacks && (
               <Route
                 exact
@@ -33,6 +34,14 @@ export function Routes() {
                 component={() => <PackCreateView />}
               />
             )}
+            {shouldEnableNftPacks && (
+              <Route
+                exact
+                path="/pack/:packKey"
+                component={() => <PackView />}
+              />
+            )}
+            <Route exact path="/admin" component={() => <AdminView />} />
             <Route
               exact
               path="/analytics"
@@ -52,9 +61,6 @@ export function Routes() {
             <Route exact path="/artists/:id" component={() => <ArtistView />} />
             <Route exact path="/artists" component={() => <ArtistsView />} />
 
-            {shouldEnableNftPacks && (
-              <Route exact path="/pack/:id?" component={() => <PackView />} />
-            )}
             <Route
               exact
               path="/auction/create/:step_param?"
@@ -71,6 +77,11 @@ export function Routes() {
               component={() => <BillingView />}
             />
             <Route path="/about" component={() => <StaticPageView />} />
+            <Route path="/collections" component={() => <CollectionsView />} />
+            <Route
+              path="/collection/:id"
+              component={() => <CollectionDetailView />}
+            />
             <Route path="/" component={() => <HomeView />} />
           </Switch>
         </Providers>

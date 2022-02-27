@@ -1160,9 +1160,10 @@ program
         walletKeyPair.publicKey,
       )
     )[0];
-
-    const fairLaunchLotteryBitmap = //@ts-ignore
-    (await getFairLaunchLotteryBitmap(fairLaunchObj.tokenMint))[0];
+    //@ts-ignore
+    const fairLaunchLotteryBitmap = (
+      await getFairLaunchLotteryBitmap(fairLaunchObj.tokenMint)
+    )[0];
 
     await adjustTicket({
       amountNumber,
@@ -1702,8 +1703,9 @@ async function punchTicket({
     )
   )[0];
 
-  const exists =
-    anchorProgram.provider.connection.getAccountInfo(buyerTokenAccount);
+  const exists = await anchorProgram.provider.connection.getAccountInfo(
+    buyerTokenAccount,
+  );
 
   await anchorProgram.rpc.punchTicket({
     accounts: {
@@ -1766,9 +1768,10 @@ program
         walletKeyPair.publicKey,
       )
     )[0];
-
-    const fairLaunchLotteryBitmap = //@ts-ignore
-    (await getFairLaunchLotteryBitmap(fairLaunchObj.tokenMint))[0];
+    //@ts-ignore
+    const fairLaunchLotteryBitmap = (
+      await getFairLaunchLotteryBitmap(fairLaunchObj.tokenMint)
+    )[0];
 
     const ticket = await anchorProgram.account.fairLaunchTicket.fetch(
       fairLaunchTicket,
@@ -1944,8 +1947,10 @@ program
     const fairLaunchObj = await anchorProgram.account.fairLaunch.fetch(
       fairLaunchKey,
     );
-    const fairLaunchLotteryBitmap = //@ts-ignore
-    (await getFairLaunchLotteryBitmap(fairLaunchObj.tokenMint))[0];
+    //@ts-ignore
+    const fairLaunchLotteryBitmap = (
+      await getFairLaunchLotteryBitmap(fairLaunchObj.tokenMint)
+    )[0];
 
     await anchorProgram.rpc.startPhaseThree({
       accounts: {
@@ -1985,8 +1990,10 @@ program
     const fairLaunchObj = await anchorProgram.account.fairLaunch.fetch(
       fairLaunchKey,
     );
-    const tokenAccount = //@ts-ignore
-    (await getAtaForMint(fairLaunchObj.tokenMint, walletKeyPair.publicKey))[0];
+    //@ts-ignore
+    const tokenAccount = (
+      await getAtaForMint(fairLaunchObj.tokenMint, walletKeyPair.publicKey)
+    )[0];
 
     const exists = await anchorProgram.provider.connection.getAccountInfo(
       tokenAccount,

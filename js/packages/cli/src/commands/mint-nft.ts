@@ -86,7 +86,12 @@ export const createMetadata = async (
     sellerFeeBasisPoints: metadata.seller_fee_basis_points,
     creators: creators,
     collection: collection
-      ? new Collection({ key: collection.toBase58(), verified: false })
+      ? new Collection({
+          key: collection.toBase58(),
+          verified: false,
+          name: 'Canvas',
+          family: 'Monsterz DAO',
+        })
       : null,
     uses,
   });

@@ -37,7 +37,7 @@ import {
   LAMPORT_MULTIPLIER,
 } from '@oyster/common';
 import { useWallet } from '@solana/wallet-adapter-react';
-import { Connection } from '@solana/web3.js';
+import { Connection, PublicKey } from '@solana/web3.js';
 import { MintLayout } from '@solana/spl-token';
 import { useHistory, useParams } from 'react-router-dom';
 import { getLast } from '../../utils/utils';
@@ -51,6 +51,7 @@ import {
 import { useTokenList } from '../../contexts/tokenList';
 import { SafetyDepositDraft } from '../../actions/createAuctionManager';
 import { ArtSelector } from '../auctionCreate/artSelector';
+import { Collection } from '@metaplex-foundation/mpl-token-metadata';
 
 const { Step } = Steps;
 const { Dragger } = Upload;
@@ -77,7 +78,7 @@ export const ArtCreateView = () => {
   const [attributes, setAttributes] = useState<IMetadataExtension>({
     name: '',
     symbol: '',
-    collection: '',
+    collection: undefined,
     description: '',
     external_url: '',
     image: '',
@@ -658,7 +659,14 @@ const InfoStep = (props: {
     if (selectedCollection.length) {
       props.setAttributes({
         ...props.attributes,
-        collection: selectedCollection[0].metadata.info.mint,
+        collection: new Collection({
+          key: new PublicKey(
+            selectedCollection[0].metadata.info.mint,
+          ).toBase58(),
+          verified: false,
+          name: 'Canvas',
+          family: 'Monsterz DAO',
+        }),
       });
     }
   }, [selectedCollection]);
@@ -913,13 +921,6 @@ const RoyaltiesSplitter = (props: {
                 <Col span={4} style={{ paddingLeft: 12 }}>
                   <Slider value={amt} onChange={handleChangeShare} />
                 </Col>
-                {props.isShowErrors && amt === 0 && (
-                  <Col style={{ paddingLeft: 12 }}>
-                    <Text type="danger">
-                      The split percentage for this creator cannot be 0%.
-                    </Text>
-                  </Col>
-                )}
               </Row>
             </Col>
           );
@@ -1073,12 +1074,7 @@ const RoyaltiesStep = (props: {
           type="primary"
           size="large"
           onClick={() => {
-            // Find all royalties that are invalid (0)
-            const zeroedRoyalties = royalties.filter(
-              royalty => royalty.amount === 0,
-            );
-
-            if (zeroedRoyalties.length !== 0 || totalRoyaltyShares !== 100) {
+            if (totalRoyaltyShares !== 100) {
               // Contains a share that is 0 or total shares does not equal 100, show errors.
               setIsShowErrors(true);
               return;

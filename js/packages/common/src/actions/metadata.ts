@@ -76,13 +76,15 @@ export type Attribute = {
 
 export type Collection = {
   key: StringPublicKey;
-  verified: number;
+  verified: boolean;
+  name: string;
+  family: string;
 };
 
 export interface IMetadataExtension {
   name: string;
   symbol: string;
-  collection: string;
+  collection?: Collection;
   creators: Creator[] | null;
   description: string;
   // preview image absolute URI

@@ -22,7 +22,6 @@ import { MintLayout, Token } from '@solana/spl-token';
 import {
   Connection,
   Keypair,
-  PublicKey,
   SystemProgram,
   TransactionInstruction,
 } from '@solana/web3.js';
@@ -89,7 +88,7 @@ export const mintNFT = async (
     properties: any;
     creators: Creator[] | null;
     sellerFeeBasisPoints: number;
-    collection?: string;
+    collection?: Collection;
     uses?: Uses;
   },
   progressCallback: Dispatch<SetStateAction<number>>,
@@ -117,9 +116,7 @@ export const mintNFT = async (
         };
       }),
     },
-    collection: metadata.collection
-      ? new PublicKey(metadata.collection).toBase58()
-      : null,
+    collection: metadata.collection ? metadata.collection : null,
     use: metadata.uses ? metadata.uses : null,
   };
 
@@ -189,12 +186,7 @@ export const mintNFT = async (
       uri: ' '.repeat(64), // size of url for arweave
       sellerFeeBasisPoints: metadata.sellerFeeBasisPoints,
       creators: metadata.creators,
-      collection: metadata.collection
-        ? new Collection({
-            key: new PublicKey(metadata.collection).toBase58(),
-            verified: false,
-          })
-        : null,
+      collection: metadata.collection ? metadata.collection : null,
       uses: metadata.uses || null,
     }),
     payerPublicKey,
@@ -273,12 +265,7 @@ export const mintNFT = async (
         uri: arweaveLink,
         sellerFeeBasisPoints: metadata.sellerFeeBasisPoints,
         creators: metadata.creators,
-        collection: metadata.collection
-          ? new Collection({
-              key: new PublicKey(metadata.collection).toBase58(),
-              verified: false,
-            })
-          : null,
+        collection: metadata.collection ? metadata.collection : null,
         uses: metadata.uses || null,
       }),
       undefined,

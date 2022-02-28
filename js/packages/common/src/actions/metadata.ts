@@ -14,6 +14,7 @@ import {
   UpdateMetadataV2Args,
   MetadataData,
 } from '@metaplex-foundation/mpl-token-metadata';
+import { Borsh } from '@metaplex-foundation/mpl-core';
 export const METADATA_PREFIX = 'metadata';
 export const EDITION = 'edition';
 export const RESERVATION = 'reservation';
@@ -80,6 +81,21 @@ export type Collection = {
   name: string;
   family: string;
 };
+
+declare type Args = {
+  key: StringPublicKey;
+  verified: boolean;
+  name: string;
+  family: string;
+};
+export declare class MixedVersionCollection extends Borsh.Data<Args> {
+  static readonly SCHEMA: any;
+  key: StringPublicKey;
+  verified: boolean;
+  name: string;
+  family: string;
+  constructor(args: Args);
+}
 
 export interface IMetadataExtension {
   name: string;

@@ -23,6 +23,7 @@ import { mintNFT } from '../../actions';
 import {
   MAX_METADATA_LEN,
   useConnection,
+  MixedVersionCollection as Collection,
   IMetadataExtension,
   MetadataCategory,
   useConnectionConfig,
@@ -51,7 +52,6 @@ import {
 import { useTokenList } from '../../contexts/tokenList';
 import { SafetyDepositDraft } from '../../actions/createAuctionManager';
 import { ArtSelector } from '../auctionCreate/artSelector';
-import { Collection } from '@metaplex-foundation/mpl-token-metadata';
 
 const { Step } = Steps;
 const { Dragger } = Upload;

@@ -45,7 +45,7 @@ export const ENDPOINTS: Array<Endpoint> = [
   {
     name: 'mainnet-beta',
     label: 'mainnet-beta',
-    url: 'https://api.metaplex.solana.com/',
+    url: 'https://icy-damp-log.solana-mainnet.quiknode.pro/b12617c4fc7ab350d139b611eb4480ef3a29f3c6/',
     chainId: ChainId.MainnetBeta,
   },
   {

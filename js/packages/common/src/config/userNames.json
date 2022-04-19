@@ -1,26 +1,186 @@
 {
-  "CANVASJAPttJYuqV9PrBBQXYUuoiDRvCdumBd9oeaXM4": {
+  "CanvasX6o5gHU63mMKVwVP1V37Q81jeQoNCo34EMPV6B": {
     "name": "Canvas",
     "image": "https://arweave.net/CdmUQw5rhfiDZcIK4_uhw5yBaKp9HrKRoPRzHh4h29s",
     "description": "Account used by the Canvas Metaplex",
-    "background": ""
+    "background": "https://arweave.net/CdmUQw5rhfiDZcIK4_uhw5yBaKp9HrKRoPRzHh4h29s"
   },
   "mnstrzQBEgTeeiLbMzJnV4u7sbgeEgorU9TrfcHWP3a": {
     "name": "Monsterz DAO",
     "image": "https://monsterzdao.com/common/logo_lores.jpg",
     "description": "",
-    "background": ""
+    "background": "https://monsterzdao.com/common/logo_lores.jpg"
   },
   "mNstrZc7FLny87TF4nWCNVWB5he9zGigBm2LEG7CRAQ": {
     "name": "Monsterz Charity",
     "image": "https://monsterzdao.com/common/charity.jpg",
     "description": "Monsterz DAO charity wallet dedicated to mental health focus organizations",
-    "background": ""
+    "background": "https://monsterzdao.com/common/charity.jpg"
   },
   "MnstRzwTj9gGgwsXsdDkMXJJjJmp9dFxMgpqfA85Vra": {
-    "name": "Monsterz Core Team",
+    "name": "Monsterz Core",
     "image": "https://monsterzdao.com/common/auraze.jpg",
     "description": "The Monsterz core team is composed of the 3 founders of the project, Auraze, Lia and Candy Machinist",
-    "background": ""
+    "background": "https://monsterzdao.com/common/auraze.jpg"
+  },
+  "AHWCUjDZTVbjQV2XGz8o9GBHM1gcFqtuKyCVHFbVRLe3": {
+    "name": "Monsterz Core Alt",
+    "image": "https://monsterzdao.com/common/auraze.jpg",
+    "description": "The Monsterz core team is composed of the 3 founders of the project, Auraze, Lia and Candy Machinist",
+    "background": "https://monsterzdao.com/common/auraze.jpg"
+  },
+  "68w36MfzzNCjaRmxiK79vdMFYwyQ4eJzCayq6jxheSvu": {
+    "name": "Monsterz DAO Alt",
+    "image": "https://monsterzdao.com/common/logo_lores.jpg",
+    "description": "The Monsterz core team is composed of the 3 founders of the project, Auraze, Lia and Candy Machinist",
+    "background": "https://monsterzdao.com/common/logo_lores.jpg"
+  },
+
+
+  "45WrxxsmjBaVqRh4m3QT9m5JDpYYHbUHTyPDJVQYZxJ1": {
+    "name": "Ali Saei",
+    "image": "https://pbs.twimg.com/profile_images/1415635329521004544/iZneGASf_400x400.jpg",
+    "description": "https://twitter.com/AliSaei31507218",
+    "background": "https://pbs.twimg.com/profile_images/1415635329521004544/iZneGASf_400x400.jpg"
+  },
+  "2qXrGhpa6pCXHHdeTbmw3x7mZgn6e257KhEEdPgoe4xq": {
+    "name": "David C Pettiford",
+    "image": "https://pbs.twimg.com/profile_images/1514962734420529153/FjNECvqo_400x400.jpg",
+    "description": "https://twitter.com/BARTG2106",
+    "background": "https://pbs.twimg.com/profile_images/1514962734420529153/FjNECvqo_400x400.jpg"
+  },
+  "5MkZaqW9YN2jo6XXTqPs5xtATPvpXrQ5pCWuBEiBY6wp": {
+    "name": "DeepPurple",
+    "image": "https://pbs.twimg.com/profile_images/1511351154785071105/O9OHoZ2A_400x400.jpg",
+    "description": "https://twitter.com/deeppurplezol",
+    "background": "https://pbs.twimg.com/profile_images/1511351154785071105/O9OHoZ2A_400x400.jpg"
+  },
+  "AZap8mkF6QjmzP9tCqKx1Mb5ZjSarBrtr1Tiowh8SqaC": {
+    "name": "Fiasco",
+    "image": "https://pbs.twimg.com/profile_images/1516266839181041665/HE03X96V_400x400.jpg",
+    "description": "https://twitter.com/Fiascostreetart",
+    "background": "https://pbs.twimg.com/profile_images/1516266839181041665/HE03X96V_400x400.jpg"
+  },
+  "5n432opcwc8ZwefdAVRkGjgHBZ3UFBCsYwAqs3Tg2Asy": {
+    "name": "Geomendrian",
+    "image": "https://pbs.twimg.com/profile_images/1460282305487024130/bGhGYlZo_400x400.jpg",
+    "description": "https://twitter.com/Geomendrian_NFT",
+    "background": "https://pbs.twimg.com/profile_images/1460282305487024130/bGhGYlZo_400x400.jpg"
+  },
+  "Bx2riEpJbnxnGnFLrChmJMmHbcNfpmc8M3mDC9nqe83x": {
+    "name": "Joseph Taylor",
+    "image": "https://pbs.twimg.com/profile_images/1516372224881709061/Trn_HcOh_400x400.jpg",
+    "description": "https://twitter.com/josephtaylorart",
+    "background": "https://pbs.twimg.com/profile_images/1516372224881709061/Trn_HcOh_400x400.jpg"
+  },
+  "yZBCQuVDYWBikW4nwcVRNpzmUFZoBB7zfbj4jffp5dZ": {
+    "name": "Kidonthephoenix",
+    "image": "https://pbs.twimg.com/media/FQt4ygXWQAMj7Hc?format=jpg&name=medium",
+    "description": "https://twitter.com/kidonthephoenix",
+    "background": "https://pbs.twimg.com/media/FQt4ygXWQAMj7Hc?format=jpg&name=medium"
+  },
+  "6QUWF5Z26WvSHnzQXCwSpoxnzPnfhkxaVsYQHtHJLQ2b": {
+    "name": "KnownAsNich",
+    "image": "https://pbs.twimg.com/profile_images/1514815413590245386/kS6g9TI2_400x400.jpg",
+    "description": "https://twitter.com/KnownAsNich",
+    "background": "https://pbs.twimg.com/profile_images/1514815413590245386/kS6g9TI2_400x400.jpg"
+  },
+  "8mqNnwhabWmLTskMA15nWi4dFJyqAx8GuJfp1zpy6Ecu": {
+    "name": "Lia",
+    "image": "https://pbs.twimg.com/profile_images/1507757174080028679/H0I7ENc6_400x400.jpg",
+    "description": "https://twitter.com/LiaMoonrise",
+    "background": "https://pbs.twimg.com/profile_images/1507757174080028679/H0I7ENc6_400x400.jpg"
+  },
+  "8fafCPYYrkXrbRXR1iHhM5tyT73swt1YPaMrqQpEXSsC": {
+    "name": "Moombahfy",
+    "image": "https://pbs.twimg.com/profile_images/1510820466591633413/Zpp0W7Rs_400x400.jpg",
+    "description": "https://twitter.com/moombahfy",
+    "background": "https://pbs.twimg.com/profile_images/1510820466591633413/Zpp0W7Rs_400x400.jpg"
+  },
+  "2oWYFpgMznGoHXmgCG6UM9xoVWmzYCckFPLctG3fiaRr": {
+    "name": "Nekrofux",
+    "image": "https://pbs.twimg.com/media/FOeKhD_acAA5iH4?format=jpg&name=medium",
+    "description": "https://twitter.com/nekrofux",
+    "background": "https://pbs.twimg.com/media/FOeKhD_acAA5iH4?format=jpg&name=medium"
+  },
+  "AJ6iqiGbcYuzhwK6d47fGmAxhditxVg5jP5bzHDWxcR9": {
+    "name": "Pokemondundee",
+    "image": "https://pbs.twimg.com/media/FPp44nUUcAI4cW-?format=jpg&name=medium",
+    "description": "https://twitter.com/pokemondundee",
+    "background": "https://pbs.twimg.com/media/FPp44nUUcAI4cW-?format=jpg&name=medium"
+  },
+  "5NB2TtPf19psZoz2Tc7YPdfeUHGW985BEnQGtHa1cgyS": {
+    "name": "Pupé Illustra",
+    "image": "https://pbs.twimg.com/profile_images/1445757939864588303/eDuaBNml_400x400.jpg",
+    "description": "https://twitter.com/pupeilustra",
+    "background": "https://pbs.twimg.com/profile_images/1445757939864588303/eDuaBNml_400x400.jpg"
+  },
+  "7YwdYkuWVtA7z5PvWMci6GM5dgfpTTNgcwRbrmLjk6Bc": {
+    "name": "Resist",
+    "image": "https://pbs.twimg.com/media/FQfUON3WUAE-b0k?format=jpg&name=medium",
+    "description": "https://twitter.com/Resistt_",
+    "background": "https://pbs.twimg.com/media/FQfUON3WUAE-b0k?format=jpg&name=medium"
+  },
+  "9VTXDVKwrWbsCFCFguRwHdJbS9LX1kjGzbz4XQPdgQXc": {
+    "name": "Sephiroth Art",
+    "image": "https://pbs.twimg.com/profile_images/1496582098785865731/328hpOqu_400x400.jpg",
+    "description": "https://twitter.com/Sephiroth_Art",
+    "background": "https://pbs.twimg.com/profile_images/1496582098785865731/328hpOqu_400x400.jpg"
+  },
+  "4JACov8KaG9SVX6THewsN4FeDTE2vY8VpbaZGDKLTdUo": {
+    "name": "Skye Green",
+    "image": "https://pbs.twimg.com/media/FQoZiNoXwAALwoZ?format=jpg&name=medium",
+    "description": "https://twitter.com/SkyeKiing",
+    "background": "https://pbs.twimg.com/media/FQoZiNoXwAALwoZ?format=jpg&name=medium"
+  },
+  "6Dy6JkzryovSSP1tXr62RssFWMqWMwP5cDcP9yJUb9hx": {
+    "name": "SolShapes",
+    "image": "https://pbs.twimg.com/profile_images/1496862113167515657/5jrY4cov_400x400.jpg",
+    "description": "https://twitter.com/SolShapes",
+    "background": "https://pbs.twimg.com/profile_images/1496862113167515657/5jrY4cov_400x400.jpg"
+  },
+  "BFAifkAYNBKQrjPCEzeV5VwiL9ijEa7dNUDzECcns8y4": {
+    "name": "Moonicorn",
+    "image": "https://pbs.twimg.com/profile_images/1515871886491758597/DNxZ-miE_400x400.jpg",
+    "description": "https://twitter.com/Moonicorns_NFT",
+    "background": "https://pbs.twimg.com/profile_images/1515871886491758597/DNxZ-miE_400x400.jpg"
+  },
+  "8t22XmvcCBjGJn78ZYH7MgiqhzLSxz5YHo3pDNxUCbKU": {
+    "name": "Walking Fish",
+    "image": "https://pbs.twimg.com/profile_images/1464589368664883202/tKEzTXee_400x400.jpg",
+    "description": "https://twitter.com/Nascent_Cph",
+    "background": "https://pbs.twimg.com/profile_images/1464589368664883202/tKEzTXee_400x400.jpg"
+  },
+  "4cfpPvbswUGsoov9FPBtpcsrQGqDqZ5WrJcUtChaSMBm": {
+    "name": "Ghost",
+    "image": "https://pbs.twimg.com/profile_images/1483425356375805952/cKNe60HZ_400x400.jpg",
+    "description": "https://twitter.com/ghostofanxiety",
+    "background": "https://pbs.twimg.com/profile_images/1483425356375805952/cKNe60HZ_400x400.jpg"
+  },
+
+
+  "BunnYLq1mkmWjxVpp5K7k6NMMTBfuCBPfUUBPwTFERDW": {
+    "name": "Trippy Bunny Tribe",
+    "image": "https://pbs.twimg.com/profile_images/1428561761234419724/OnIVXy2i_400x400.jpg",
+    "description": "https://twitter.com/TrippyBunny_NFT",
+    "background": "https://pbs.twimg.com/profile_images/1428561761234419724/OnIVXy2i_400x400.jpg"
+  },
+  "pEsKYABNARLiDFYrjbjHDieD5h6gHrvYf9Vru62NX9k": {
+    "name": "Pesky Penguins",
+    "image": "https://pbs.twimg.com/profile_images/1475307164680048643/q621WKfj_400x400.jpg",
+    "description": "https://twitter.com/peskypenguins",
+    "background": "https://pbs.twimg.com/profile_images/1475307164680048643/q621WKfj_400x400.jpg"
+  },
+  "E8ts7nVLkdFRCMdvZeHFrJ73ineNcD2h2soiTdbAKJPh": {
+    "name": "Boopieverse",
+    "image": "https://pbs.twimg.com/profile_images/1488352371239317504/vOxs2E_r_400x400.jpg",
+    "description": "https://twitter.com/Boopieverse",
+    "background": "https://pbs.twimg.com/profile_images/1488352371239317504/vOxs2E_r_400x400.jpg"
+  },
+  "CyFMj1sJRChviVdyVt52DGbNwypegfrN3JpyFWYnRC11": {
+    "name": "Friendly Frogs",
+    "image": "https://pbs.twimg.com/profile_images/1513700534955425792/abc-lKHP_400x400.jpg",
+    "description": "https://twitter.com/FriendlyFrogSC",
+    "background": "https://pbs.twimg.com/profile_images/1513700534955425792/abc-lKHP_400x400.jpg"
   }
 }

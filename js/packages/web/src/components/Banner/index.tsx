@@ -38,24 +38,21 @@ export const Banner = (props: {
         <div className="banner-content">
           <div id={'main-heading'}>{props.headingText}</div>
           <div id={'sub-heading'}>{props.subHeadingText}</div>
-          {props.actionComponent}
         </div>
       </div>
       <div
         id={'current-banner'}
         style={{ backgroundImage: `url(${props.src})` }}
       >
-        <span id={'gradient-banner'}></span>
         <div id="banner-inner">
           <div id={'message-container'}>
             <div id={'main-heading'}>{props.headingText}</div>
             <div id={'sub-heading'}>{props.subHeadingText}</div>
-            {props.actionComponent}
           </div>
           {props.children}
           <div className="powered-by">
             <span>
-              POWERED BY <b>METAPLEX</b>
+              Powered by <b>Monsterz DAO</b>
             </span>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useMemo, useState} from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Menu, Modal } from 'antd';
 import { useWallet } from '@solana/wallet-adapter-react';
@@ -11,11 +11,22 @@ import {
   CurrentUserBadge,
   CurrentUserBadgeMobile,
 } from '../CurrentUserBadge';
-import { ConnectButton } from '@oyster/common';
+import {ConnectButton, useMeta} from '@oyster/common';
 import { MobileNavbar } from '../MobileNavbar';
 
 const getDefaultLinkActions = (connected: boolean) => {
-  return [
+  const { publicKey } = useWallet();
+  const { whitelistedCreatorsByCreator, store } = useMeta();
+  const pubkey = publicKey?.toBase58() || '';
+
+  const canCreate = useMemo(() => {
+    return (
+    store?.info?.public ||
+    whitelistedCreatorsByCreator[pubkey]?.info?.activated
+    );
+  }, [pubkey, whitelistedCreatorsByCreator, store]);
+
+  return canCreate ? [
     <Link to={`/`} key={'explore'}>
       <Button className="app-btn">Explore</Button>
     </Link>,
@@ -28,7 +39,7 @@ const getDefaultLinkActions = (connected: boolean) => {
     <Link to={`/artists`} key={'artists'}>
       <Button className="app-btn">Creators</Button>
     </Link>,
-  ];
+  ] : [];
 };
 
 const DefaultActions = ({ vertical = false }: { vertical?: boolean }) => {
@@ -50,11 +61,22 @@ export const MetaplexMenu = () => {
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
   const { connected } = useWallet();
 
+  const { publicKey } = useWallet();
+  const { whitelistedCreatorsByCreator, store } = useMeta();
+  const pubkey = publicKey?.toBase58() || '';
+
+  const canCreate = useMemo(() => {
+    return (
+    store?.info?.public ||
+    whitelistedCreatorsByCreator[pubkey]?.info?.activated
+    );
+  }, [pubkey, whitelistedCreatorsByCreator, store]);
+
   if (width < 768)
     return (
       <>
         <Modal
-          title={<img src={'/metaplex-logo.svg'} />}
+          title={<img src={'/monsterz.webp'} />}
           visible={isModalVisible}
           footer={null}
           className={'modal-box'}
@@ -94,7 +116,7 @@ export const MetaplexMenu = () => {
                     }}
                   />
                   <Notifications />
-                  <Cog />
+                  {canCreate && <Cog />}
                 </>
               )}
             </div>
@@ -113,13 +135,24 @@ export const MetaplexMenu = () => {
 export const LogoLink = () => {
   return (
     <Link to={`/`}>
-      <img src={'/metaplex-logo.svg'} />
+      <img src={'/monsterz.webp'} width={200} />
     </Link>
   );
 };
 
 export const AppBar = () => {
   const { connected } = useWallet();
+  const { publicKey } = useWallet();
+  const { whitelistedCreatorsByCreator, store } = useMeta();
+  const pubkey = publicKey?.toBase58() || '';
+
+  const canCreate = useMemo(() => {
+    return (
+    store?.info?.public ||
+    whitelistedCreatorsByCreator[pubkey]?.info?.activated
+    );
+  }, [pubkey, whitelistedCreatorsByCreator, store]);
+
   return (
     <>
       <MobileNavbar />
@@ -144,7 +177,7 @@ export const AppBar = () => {
                 iconSize={24}
               />
               <Notifications />
-              <Cog />
+              {canCreate && <Cog />}
             </>
           )}
         </div>

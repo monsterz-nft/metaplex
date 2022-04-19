@@ -16,7 +16,8 @@ export const ArtistsView = () => {
     700: 2,
     500: 1,
   };
-  const items = Object.values(whitelistedCreatorsByCreator);
+
+  const items = Object.values(whitelistedCreatorsByCreator).sort((a, b) => (a.info.name || '').localeCompare(b.info.name || ''));
   const artistGrid = (
     <Masonry
       breakpointCols={breakpointColumnsObj}

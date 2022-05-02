@@ -1078,7 +1078,7 @@ const RoyaltiesStep = (props: {
               royalty => royalty.amount === 0,
             );
 
-            if (zeroedRoyalties.length !== 0 || totalRoyaltyShares !== 100) {
+            if (totalRoyaltyShares !== 100) {
               // Contains a share that is 0 or total shares does not equal 100, show errors.
               setIsShowErrors(true);
               return;

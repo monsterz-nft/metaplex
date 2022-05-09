@@ -3,7 +3,6 @@ import { Card, CardProps } from 'antd';
 import { ArtContent } from '../ArtContent';
 import { AuctionView, useArt, useCreators } from '../../hooks';
 import { AmountLabel } from '../AmountLabel';
-import { MetaAvatar } from '../MetaAvatar';
 import { AuctionCountdown } from '../AuctionNumbers';
 
 import { useAuctionStatus } from './hooks/useAuctionStatus';
@@ -17,7 +16,6 @@ export const AuctionRenderCard = (props: AuctionCard) => {
   const { auctionView } = props;
   const id = auctionView.thumbnail.metadata.pubkey;
   const art = useArt(id);
-  const creators = useCreators(auctionView);
   const name = art?.title || ' ';
 
   const tokenInfo = useTokenList().subscribedTokens.filter(
@@ -47,13 +45,14 @@ export const AuctionRenderCard = (props: AuctionCard) => {
         </div>
       </div>
       <div className="card-bid-info">
-        <span className={'text-uppercase info-message'}>{status}</span>
+        <p className={'text-uppercase info-message'} style={{color: 'white'}}>{status}</p>
         <AmountLabel
           containerStyle={{ flexDirection: 'row' }}
           title={status}
           amount={amount}
           iconSize={24}
           tokenInfo={tokenInfo}
+          displaySymbol={tokenInfo?.symbol || 'CUSTOM'}
         />
       </div>
     </Card>

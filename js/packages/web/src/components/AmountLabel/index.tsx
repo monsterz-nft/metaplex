@@ -60,7 +60,7 @@ export const AmountLabel = (props: IAmountLabel) => {
           style={style}
           className="create-statistic"
           title={title || ''}
-          value={`${formattedAmount} ${displaySymbol || ''}`}
+          value={`${formattedAmount} ${displaySymbol ? `$${displaySymbol}` : ''}`}
           prefix={
             customPrefix || (
               <TokenCircle

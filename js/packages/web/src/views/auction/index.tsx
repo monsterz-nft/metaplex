@@ -163,25 +163,19 @@ export const AuctionView = () => {
 
           <div className="info-container">
             <div className={'info-component'}>
-              <h6 className={'info-title'}>Edition</h6>
-              <span>
-                {(auction?.items.length || 0) > 1 ? 'Multiple' : edition}
-              </span>
-            </div>
-            <div className={'info-component'}>
-              <h6 className={'info-title'}>Winners</h6>
+              <h6 className={'info-title'}>Minted</h6>
               <span>
                 {winnerCount === undefined ? (
                   <Skeleton paragraph={{ rows: 0 }} />
                 ) : isOpen ? (
                   'Unlimited'
                 ) : (
-                  winnerCount
+                  art.supply
                 )}
               </span>
             </div>
             <div className={'info-component'}>
-              <h6 className={'info-title'}>NFTS</h6>
+              <h6 className={'info-title'}>Supply</h6>
               <span>
                 {nftCount === undefined ? (
                   <Skeleton paragraph={{ rows: 0 }} />
@@ -230,14 +224,6 @@ export const AuctionView = () => {
             </List>
           </Col>
         )}
-        <Col className="auction-mobile-section" span={24}>
-          <div className={'info-view'}>
-            <h6 className={'info-title'}>Artists</h6>
-            <div style={{ display: 'flex' }}>
-              <MetaAvatarDetailed creators={creators} />
-            </div>
-          </div>
-        </Col>
         <Col className="auction-mobile-section" span={24}>
           <div className={'info-view'}>
             <h6 className={'info-title'}>View on</h6>
@@ -298,14 +284,14 @@ export const AuctionView = () => {
           </p>
           {attributes && (
             <div className={'about-nft-collection a-attributes'}>
-              <h6>Attributes</h6>
-              <List grid={{ column: 4 }}>
+              <h6 className={'about-nft-collection'}>ATTRIBUTES</h6>
+              <div>
                 {attributes.map((attribute, index) => (
-                  <List.Item key={`${attribute.value}-${index}`}>
-                    <Card title={attribute.trait_type}>{attribute.value}</Card>
-                  </List.Item>
+                <p key={`${attribute.value}-${index}`} className={'about-nft-collection a-description'}>
+                  <strong>{attribute.trait_type}: </strong>{attribute.value}
+                </p>
                 ))}
-              </List>
+              </div>
             </div>
           )}
           {/* {auctionData[id] && (
@@ -324,29 +310,25 @@ export const AuctionView = () => {
             <Col span={12} md={16}>
               <div className={'info-container'}>
                 <div className={'info-component'}>
-                  <h6 className={'info-title'}>CREATED BY</h6>
-                  <span>{<MetaAvatar creators={creators} />}</span>
-                </div>
-                <div className={'info-component'}>
                   <h6 className={'info-title'}>Edition</h6>
                   <span>
                     {(auction?.items.length || 0) > 1 ? 'Multiple' : edition}
                   </span>
                 </div>
                 <div className={'info-component'}>
-                  <h6 className={'info-title'}>Winners</h6>
+                  <h6 className={'info-title'}>Minted</h6>
                   <span>
                     {winnerCount === undefined ? (
                       <Skeleton paragraph={{ rows: 0 }} />
                     ) : isOpen ? (
                       'Unlimited'
                     ) : (
-                      winnerCount
+                      art.supply
                     )}
                   </span>
                 </div>
                 <div className={'info-component'}>
-                  <h6 className={'info-title'}>NFTS</h6>
+                  <h6 className={'info-title'}>Supply</h6>
                   <span>
                     {nftCount === undefined ? (
                       <Skeleton paragraph={{ rows: 0 }} />
@@ -355,26 +337,6 @@ export const AuctionView = () => {
                     ) : (
                       nftCount
                     )}
-                  </span>
-                </div>
-                <div className={'info-component'}>
-                  <h6 className={'info-title'}>CURRENCY</h6>
-                  <span>
-                    {nftCount === undefined ? (
-                      <Skeleton paragraph={{ rows: 0 }} />
-                    ) : (
-                      `${tokenInfo?.name || 'Custom Token'} ($${
-                        tokenInfo?.symbol || 'CUSTOM'
-                      })`
-                    )}
-                    <ClickToCopy
-                      className="copy-pubkey"
-                      copyText={
-                        tokenInfo
-                          ? tokenInfo?.address
-                          : auction?.auction.info.tokenMint || ''
-                      }
-                    />
                   </span>
                 </div>
               </div>

@@ -29,17 +29,6 @@ export const AuctionRenderCard = (props: AuctionCard) => {
     <Card hoverable={true} className={`auction-render-card`} bordered={false}>
       <div className={'card-art-info'}>
         <div className="auction-gray-wrapper">
-          <div className={'card-artist-info'}>
-            <MetaAvatar
-              creators={creators.length ? [creators[0]] : undefined}
-            />
-            <span className={'artist-name'}>
-              {creators[0]?.name ||
-                creators[0]?.address?.substr(0, 6) ||
-                'Go to auction'}
-              ...
-            </span>
-          </div>
           <div className={'art-content-wrapper'}>
             <ArtContent
               className="auction-image no-events"

@@ -79,7 +79,7 @@ export const AmountLabel = (props: IAmountLabel) => {
             priceUSD ? (
               formatUSD.format(priceUSD)
             ) : (
-              '$N/A'
+              ''
             )
           ) : (
             <div className="placebid">{ended ? 'N/A' : 'Place Bid'}</div>

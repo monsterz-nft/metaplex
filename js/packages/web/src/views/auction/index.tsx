@@ -271,7 +271,7 @@ export const AuctionView = () => {
             </Carousel>
           </div>
           <h6 className={'about-nft-collection'}>
-            ABOUT THIS {nftCount === 1 ? 'NFT' : 'COLLECTION'}
+            ABOUT THIS NFT
           </h6>
           <p className={'about-nft-collection a-description'}>
             {hasDescription && <Skeleton paragraph={{ rows: 3 }} />}
@@ -521,15 +521,7 @@ const BidLine = (props: {
         </Col>
         <Col span={8}>
           <div className={'flex-right'}>
-            <Identicon
-              style={{
-                width: 24,
-                height: 24,
-                marginRight: 10,
-                marginTop: 2,
-              }}
-              address={bidder}
-            />{' '}
+            {' '}
             <span style={{ opacity: 0.7 }}>
               {bidderTwitterHandle ? (
                 <Row className="pubkey-row">

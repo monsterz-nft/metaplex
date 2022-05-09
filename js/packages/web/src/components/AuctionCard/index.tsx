@@ -619,12 +619,6 @@ export const AuctionCard = ({
                 style={{ marginBottom: 0 }}
                 amount={balance.balance}
                 tokenInfo={tokenInfo}
-                customPrefix={
-                  <Identicon
-                    address={wallet?.publicKey?.toBase58()}
-                    style={{ width: 36 }}
-                  />
-                }
               />
             </div>
           ) : (

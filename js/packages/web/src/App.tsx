@@ -1,9 +1,9 @@
 import React from 'react';
-import { Routes } from './routes';
-// import { Routes } from './views/preLaunch/routes'
+import {MaintenanceView} from "./views/maintenance";
+import {Routes} from "./routes";
 
 function App() {
-  return <Routes />;
+  return (process.env.NEXT_MAINTENANCE === 'true' ? <MaintenanceView /> : <Routes />);
 }
 
 export default App;

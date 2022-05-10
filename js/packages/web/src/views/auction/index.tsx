@@ -102,6 +102,9 @@ export const AuctionView = () => {
   } else if (art.type === ArtType.Print) {
     edition = `${art.edition} of ${art.supply}`;
   }
+
+  const minted = (auction?.auction.info.bidState.bids || []).length;
+
   const nftCount = auction?.items.flat().length;
   const winnerCount = auction?.items.length;
   const isOpen =
@@ -170,7 +173,7 @@ export const AuctionView = () => {
                 ) : isOpen ? (
                   'Unlimited'
                 ) : (
-                  art.supply
+                  minted
                 )}
               </span>
             </div>
@@ -323,7 +326,7 @@ export const AuctionView = () => {
                     ) : isOpen ? (
                       'Unlimited'
                     ) : (
-                      art.supply
+                      minted
                     )}
                   </span>
                 </div>
@@ -570,6 +573,7 @@ export const AuctionBids = ({
   const activeBidders = useMemo(() => {
     return new Set(activeBids.map(b => b.key));
   }, [activeBids]);
+
   const auctionState = auctionView
     ? auctionView.auction.info.state
     : AuctionState.Created;
